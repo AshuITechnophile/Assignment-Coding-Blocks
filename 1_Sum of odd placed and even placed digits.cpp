@@ -1,26 +1,31 @@
 #include <iostream>
+#include <vector>
 using namespace std;
-int main()
+void sumofevenandodd(int n)
 {
-    int n;
-    cin >> n;
-    int even_sum = 0;
-    int odd_sum = 0;
+    int sum_even = 0, sum_odd = 0, position = 0;
+
     while (n > 0)
     {
         int k = n % 10;
         n = n / 10;
-        if (n % 2 == 0)
+        position++;
+        if (position % 2 == 0)
         {
-            even_sum = even_sum + k;
+            sum_even += k;
         }
         else
         {
-            odd_sum = odd_sum + k;
+            sum_odd += k;
         }
     }
-    cout << "This is sum of even postion numbers = " << even_sum;
-    cout << endl;
-    cout << "This is sum of odd postion number = " << odd_sum;
+    cout << sum_odd << endl;
+    cout << sum_even << endl;
+}
+int main()
+{
+    int n;
+    cin >> n;
+    sumofevenandodd(n);
     return 0;
 }
