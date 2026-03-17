@@ -1,15 +1,21 @@
 #include <iostream>
 using namespace std;
-int fibonacci(int n)
+void fibonacci(int n)
 {
     int a = 0, b = 1;
-    for (int i = 1; i < n; i++)
+    int result;
+    for (int i = 2; i <= n; i++)
     {
-        int result = a + b;
+        result = a + b;
         a = b;
+        b = result;
     }
+    cout << result;
 }
 int main()
 {
+    int n;
+    cin >> n;
+    fibonacci(n);
     return 0;
 }
