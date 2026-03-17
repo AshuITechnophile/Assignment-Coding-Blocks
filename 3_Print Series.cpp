@@ -2,18 +2,15 @@
 using namespace std;
 int main()
 {
-    int n1;
-    int n2;
-    int pick;
-    cin >> n1;
-    cin >> n2;
-    for (int n = 1; n <= n1; n++)
+    int n;
+    int sum = 0;
+    cin >> n;
+    while (n > 0)
     {
-        pick = 3 * n + 2;
-        if (pick % n2 != 0)
-        {
-            cout << pick << endl;
-        }
+        int k = n % 10;
+        n = n / 10;
+        sum = sum * 10 + k;
     }
+    cout << sum;
     return 0;
 }
